@@ -1,5 +1,5 @@
 pandas
 requests
-beautifulsoup5
+beautifulsoup4
 lxml
 html5lib
