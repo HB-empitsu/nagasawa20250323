@@ -1,0 +1,5 @@
+pandas
+requests
+beautifulsoup5
+lxml
+html5lib
