@@ -77,8 +77,8 @@ fig1 = make_subplots(rows=rows, cols=3, shared_xaxes=True, shared_yaxes=True, su
 
 # 各サブプロットにデータを追加
 for i, col in enumerate(pv.columns):
-    row = i // 3 + 1
-    col_num = i % 3 + 1
+    row = i // 4 + 1
+    col_num = i % 4 + 1
 
     fig1.add_trace(
         go.Scatter(x=pv.index, y=pv[col], mode="lines", line_shape="hv", fill="tozeroy", name=col), row=row, col=col_num
