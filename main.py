@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 
-@st.cache_data
+@st.cache_data(ttl=600)
 def load_data():
     df_info = pd.read_csv("info.csv", index_col="date", parse_dates=True)
     df_data = pd.read_csv("data.csv", parse_dates=["日付"])
