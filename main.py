@@ -73,7 +73,7 @@ tab5.subheader("避難所別利用状況")
 rows = math.ceil(pv.shape[1] / 4)
 
 # サブプロットの作成
-fig1 = make_subplots(rows=rows, cols=3, shared_xaxes=True, shared_yaxes=True, subplot_titles=pv.columns)
+fig1 = make_subplots(rows=rows, cols=4, shared_xaxes=True, shared_yaxes=True, subplot_titles=pv.columns)
 
 # 各サブプロットにデータを追加
 for i, col in enumerate(pv.columns):
