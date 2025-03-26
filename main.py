@@ -51,9 +51,10 @@ tab2.subheader("避難所情報詳細")
 
 ## オプションを定義
 options = df3["日付"].unique().tolist()
+last_index = len(options) - 1
 
 ## セレクトボックスを作成
-selected_option = tab2.selectbox("日時を選択:", options)
+selected_option = tab2.selectbox("日時を選択:", options, index=last_index)
 
 if selected_option:
     df_map = df3[df3["日付"] == selected_option].copy().reset_index(drop=True)
@@ -98,6 +99,9 @@ for i, col in enumerate(pv.columns):
 
     # 桜井地区
     fig1.add_vline(x="2025-03-25 17:40", line_width=1, line_dash="dash", line_color="red", row=row, col=col_num)
+
+    # 朝倉南乙野々瀬
+    fig1.add_vline(x="2025-03-26 01:10", line_width=1, line_dash="dash", line_color="red", row=row, col=col_num)
 
 # レイアウトの更新
 fig1.update_layout(height=800, showlegend=False)
@@ -171,5 +175,8 @@ fig2.add_vline(x="2025-03-25 15:00", line_width=1, line_dash="dash", line_color=
 
 # 桜井地区
 fig2.add_vline(x="2025-03-25 17:40", line_width=1, line_dash="dash", line_color="red")
+
+# 朝倉南乙野々瀬
+fig2.add_vline(x="2025-03-26 01:10", line_width=1, line_dash="dash", line_color="red")
 
 tab6.plotly_chart(fig2)
